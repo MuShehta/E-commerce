@@ -1,0 +1,32 @@
+﻿@model IEnumerable<E_commerce.Models.Product>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<a href="/Login" class="btn btn-primary">Log In</a>
+<div class="contanier">
+    <div class="row">
+       
+            <div class="row justify-content-around">
+
+                @foreach (var item in Model)
+                {
+
+
+                    <div class="col-6 col-lg-3">
+                        <!-- set info of item  -->
+                        <div class="card" style="width: 18rem;margin:3px">
+                            <img class="card-img-top" src="/images/@item.Image" alt="Card image cap">
+                            <div class="card-body">
+                                <h5 class="card-title">@item.Name</h5>
+                                <p class="card-text">@item.Description</p>
+                                <a href="Item/Index/@item.Id" class="btn btn-primary">Order it</a>
+                            </div>
+                        </div>
+                    </div>
+
+                }
+
+            </div>
+    </div>
